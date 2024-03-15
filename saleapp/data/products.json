@@ -1,0 +1,24 @@
+[{
+  "id": 1,
+  "name": "iPhone 15 Pro Max",
+  "description": "Apple, 256GB, RAM: 8Gb, iOS17",
+  "price": 17000000,
+  "image": "images/img1.jpg",
+  "category_id": 1
+},
+{
+  "id": 2,
+  "name": "iPad Pro 2020",
+  "description": "Apple, 128GB, RAM: 6Gb",
+  "price": 37000000,
+  "image": "images/img2.jpg",
+  "category_id": 2
+},
+{
+  "id": 3,
+  "name": "Samsung Galaxy S24",
+  "description": "Samsung, 256GB, 5G, RAM: 8GB",
+  "price": 24000000,
+  "image": "images/img3.jpg",
+  "category_id": 1
+}]
