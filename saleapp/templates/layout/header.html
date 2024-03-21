@@ -1,0 +1,35 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">
+    <img src="{{url_for('static', filename = 'images/logo.jpg')}}" alt="logo" style="width:40px">
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Trang chu</a>
+      </li>
+<!--      {%for c in categories%}-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="/">{{c.name}}</a>-->
+<!--      </li>-->
+<!--      {%endfor%}-->
+    </ul>
+  </div>
+</nav>
