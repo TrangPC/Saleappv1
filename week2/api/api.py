@@ -1,6 +1,6 @@
 import flask
 from flask import Flask, Blueprint, request
-
+from week2.handler import bootstrap
 import week2.bootstrap
 
 app = flask.Blueprint("api_app", __name__)
