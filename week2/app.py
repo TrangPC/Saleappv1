@@ -5,7 +5,7 @@ from api.api import app as api_app
 from api_dto.api_exception import error_handler
 
 app = Flask(__name__)
-app.register_blueprint(Exception, error_handler)
+app.register_error_handler(Exception, error_handler)
 app.register_blueprint(api_service, url_prefix="/api1")
 app.register_blueprint(api_healthcheck, url_prefix="/api1")
 app.register_blueprint(api_app, url_prefix="/api3")

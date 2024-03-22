@@ -36,8 +36,8 @@ class PostgreDatabase:
             cur = conn.cursor()
             res = cur.execute('Select * from profile where name = %s', (name,))
             res = cur.fetchall()
-        except Exception as error:
-            logging.getLogger().info(f"[ERROR] get info data: {str(error)}")
+        except Exception as e:
+            logging.getLogger().info(f"[ERROR] get info data: {str(e)}")
         finally:
             cur.close()
             conn.close()
