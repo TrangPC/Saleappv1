@@ -8,7 +8,7 @@ app = flask.Blueprint("api_healcheck", __name__)
 def healcheck():
     is_connect = False
     try:
-        response = requests.get('http://127.0.0.1:5001').status_code
+        response = requests.get('http://127.0.0.1:8000/api2').status_code
         if response == 200:
             return jsonify({
                 'status': 'success'
