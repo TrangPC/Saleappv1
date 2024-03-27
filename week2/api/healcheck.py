@@ -1,8 +1,10 @@
 import flask
-from flask import Flask, jsonify
 import requests
+from flask import Flask, jsonify, Blueprint
 
 app = flask.Blueprint("api_healcheck", __name__)
+
+
 # app.register_blueprint(api_healcheck)
 @app.route('/healcheck', methods=['GET'])
 def healcheck():
@@ -15,9 +17,9 @@ def healcheck():
             }, 200)
         else:
             return jsonify({
-                'status': 'faild'
+                'status': 'fail'
             }, 500)
-    except Exception as error:
+    except Exception as e:
         return jsonify({
             'status': 'Bad request'
         }, 400)

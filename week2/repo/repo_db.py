@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify, Blueprint
-import psycopg2, logging
-
+import logging
+import psycopg2
+from flask_redis import FlaskRedis
 
 class PostgreDatabase:
     def __init__(self):
@@ -14,8 +14,8 @@ class PostgreDatabase:
         try:
             conn = psycopg2.connect(self.postgre_host, self.postgre_port, self.db_user, self.db_pass, self.db);
             return conn
-        except Exception as error:
-            logging.getLogger().info(f"[ERROR] connect refuse: {str(error)}")
+        except Exception as e:
+            logging.getLogger().info(f"[ERROR] connect refuse: {str(e)}")
 
     def create_table(self):
         try:
@@ -41,3 +41,5 @@ class PostgreDatabase:
         finally:
             cur.close()
             conn.close()
+
+

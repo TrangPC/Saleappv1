@@ -2,10 +2,14 @@ from flask import Flask
 from api.service import app as api_service
 from api.healcheck import app as api_healthcheck
 from api.api import app as api_app
-from api_dto.api_exception import error_handler
+from api_dto.api_exception import handle_exception
+from flask_redis import FlaskRedis
 
 app = Flask(__name__)
-app.register_error_handler(Exception, error_handler)
+app.config['REDIS_URL'] = "redis://localhost:6379/0"
+redis_store = FlaskRedis(app)
+
+app.register_error_handler(Exception, handle_exception)
 app.register_blueprint(api_service, url_prefix="/api1")
 app.register_blueprint(api_healthcheck, url_prefix="/api1")
 app.register_blueprint(api_app, url_prefix="/api3")
